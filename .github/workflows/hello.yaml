@@ -18,7 +18,7 @@ jobs:
         run: 'echo "Branch: ${{ github.ref_name }}"'
       
       - name: list files in the repository
-        run: exit 1
+        run: ls -la
 
       - name: Print the runner's operating system
         run: 'echo "Runner OS: ${{ runner.os }}"'
