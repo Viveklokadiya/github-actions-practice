@@ -1,7 +1,9 @@
 name: Matrix Build
 
 on:
-  push
+  push:
+    branches:
+      - main
 
 jobs:
   python-matrix:

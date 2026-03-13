@@ -1,0 +1,29 @@
+name: check-tools
+
+on:
+  push:
+    branches:
+      - for-test
+
+jobs:
+  github-Ubuntu-runners:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show OS, Hostname and User
+        run: |
+          echo "OS: ${{ runner.os }}"
+          echo "Hostname: ${{ runner.hostname }}"
+          echo "User: ${{ runner.user }}"
+
+  check-tools:
+    needs: github-Ubuntu-runners
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Python version
+      run: python --version
+    - name: Check Node.js version
+      run: node --version
+    - name: Check Docker version
+      run: docker --version
+    - name: check git version
+      run: git --version
